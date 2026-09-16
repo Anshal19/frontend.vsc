@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anshal | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #111827;
+            color: white;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #111827;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #a78bfa;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #a78bfa;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 50px 8%;
+            gap: 40px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero-text h1 span {
+            color: #a78bfa;
+        }
+
+        .hero-text h2 {
+            color: #d1d5db;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            color: #9ca3af;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #8b5cf6;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background: #7c3aed;
+        }
+
+        /* Profile */
+        .profile-card {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
+            box-shadow: 0 0 50px #8b5cf655;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 8%;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .heading h2 {
+            font-size: 38px;
+            color: #a78bfa;
+        }
+
+        .heading p {
+            color: #9ca3af;
+            margin-top: 10px;
+        }
+
+        /* About */
+        .about-box {
+            max-width: 850px;
+            margin: auto;
+            background: #1f2937;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            line-height: 1.8;
+            color: #d1d5db;
+        }
+
+        /* Skills */
+        .skills {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .skill {
+            margin-bottom: 25px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .bar {
+            height: 10px;
+            background: #374151;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+            border-radius: 10px;
+        }
+
+        .html {
+            width: 90%;
+        }
+
+        .css {
+            width: 80%;
+        }
+
+        .js {
+            width: 70%;
+        }
+
+        .java {
+            width: 75%;
+        }
+
+        .cpp {
+            width: 70%;
+        }
+
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            background: #1f2937;
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.3s;
+            border: 1px solid #374151;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            border-color: #8b5cf6;
+        }
+
+        .project-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            color: #a78bfa;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+
+        .project a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #22d3ee;
+            text-decoration: none;
+        }
+
+        /* Contact */
+        .contact-box {
+            max-width: 650px;
+            margin: auto;
+            text-align: center;
+            background: #1f2937;
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .contact-box p {
+            color: #d1d5db;
+            margin: 15px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #0b1120;
+            color: #9ca3af;
+        }
+
+        /* Mobile */
+        @media(max-width: 800px) {
+
+            nav {
+                padding: 20px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+                font-size: 13px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .profile-card {
+                width: 200px;
+                height: 200px;
+                font-size: 65px;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">ANSHAL</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <h1>Hi, I'm <span>Anshal</span></h1>
+
+            <h2>Web Developer & B.Tech Student</h2>
+
+            <p>
+                I love creating modern websites and learning
+                new technologies. I enjoy coding, designing
+                and building interesting projects.
+            </p>
+
+            <a href="#projects" class="btn">
+                My Projects
+            </a>
+
+            <a href="#contact" class="btn">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="profile-card">
+            👨‍💻
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about">
+
+        <div class="heading">
+            <h2>About Me</h2>
+            <p>Get to know me</p>
+        </div>
+
+        <div class="about-box">
+
+            <p>
+                Hello! I'm Anshal, a B.Tech student and
+                aspiring software developer. I am interested
+                in web development, programming and problem
+                solving. Currently, I am improving my skills
+                in HTML, CSS, JavaScript, Java and C++.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <div class="heading">
+            <h2>My Skills</h2>
+            <p>Technologies I work with</p>
+        </div>
+
+        <div class="skills">
+
+            <div class="skill">
+                <div class="skill-name">
+                    <span>HTML</span>
+                    <span>90%</span>
+                </div>
+
+                <div class="bar">
+                    <div class="progress html"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-name">
+                    <span>CSS</span>
+                    <span>80%</span>
+                </div>
+
+                <div class="bar">
+                    <div class="progress css"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-name">
+                    <span>JavaScript</span>
+                    <span>70%</span>
+                </div>
+
+                <div class="bar">
+                    <div class="progress js"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Java</span>
+                    <span>75%</span>
+                </div>
+
+                <div class="bar">
+                    <div class="progress java"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-name">
+                    <span>C++</span>
+                    <span>70%</span>
+                </div>
+
+                <div class="bar">
+                    <div class="progress cpp"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <div class="heading">
+            <h2>My Projects</h2>
+            <p>Some things I have created</p>
+        </div>
+
+
+        <div class="projects">
+
+            <div class="project">
+
+                <div class="project-icon">🎵</div>
+
+                <h3>Music Player</h3>
+
+                <p>
+                    A modern music player interface created
+                    using HTML, CSS and JavaScript.
+                </p>
+
+                <a href="#">View Project →</a>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-icon">📸</div>
+
+                <h3>Instagram UI</h3>
+
+                <p>
+                    A simple Instagram-style login interface
+                    created using HTML and CSS.
+                </p>
+
+                <a href="#">View Project →</a>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-icon">🎓</div>
+
+                <h3>Student Management</h3>
+
+                <p>
+                    A student management application based
+                    on programming and database concepts.
+                </p>
+
+                <a href="#">View Project →</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <div class="heading">
+            <h2>Contact Me</h2>
+            <p>Let's connect</p>
+        </div>
+
+        <div class="contact-box">
+
+            <p>📧 example@gmail.com</p>
+
+            <p>📱 +91 9876543210</p>
+
+            <p>📍 India</p>
+
+            <br>
+
+            <a
+                href="mailto:example@gmail.com"
+                class="btn">
+                Send Email
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>© 2026 Anshal All Rights Reserved.</p>
+
+    </footer>
+
+</body>
+</html>
